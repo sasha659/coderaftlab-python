@@ -19,3 +19,15 @@ def searchAstro(peopleAstro):
     except:
         print "no info found"
     
+userWantsMore = True
+while userWantsMore == True:
+    peopleAstro = raw_input('Please enter a sign: ').lower()
+    searchAstro(peopleAstro)
+    userWantsMore = False
+    searchAgain = raw_input('search again? y/n')
+    if searchAgain == 'y':
+        userWantsMore = True
+    elif searchAgain == 'n':
+        userWantsMore = False
+    else:
+        print "uh"
