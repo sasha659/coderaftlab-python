@@ -1,4 +1,4 @@
-epic_programmer_dict = {
+astro_dict = {
     'aquarius' : ['jan20 - feb18', 111],
     'pisces' : ['feb19 - march20', 222],
     'aries' : ['march21 - april19', 333],
@@ -9,16 +9,37 @@ epic_programmer_dict = {
     'virgo' : ['aug23 - sept22', 888],
     'libra' : ['sept23 - oct22', 999],
     'scorpio' : ['oct23 - nov21', 1000],
-    'saggitarius' : ['nov22 - dec21', 1100],
+    'sagittarius' : ['nov22 - dec21', 1100],
     'capricorn' : ['dec22 - jan19', 1200]
                         }
+char_astro = {
+    'daring' : ['aries', 1],
+    'twofaced' : ['gemini', 2],
+    'charming' : ['libra', 3],
+    'loving' : ['scorpio', 4],
+    'enthusiastic' : ['sagittarius', 5],
+    'wise' : ['capricorn', 6],
+    'adventurous' : ['aquarius', 7],
+    'fierce' : ['virgo', 8],
+    'sensitive' : ['pisces', 9],
+    'protective' : ['leo', 10],
+    'emotional' : ['cancer', 11],
+    'strong' : ['taurus', 12]
+    }
+
 def searchAstro(peopleAstro):
     try:
-        astroInfo = epic_programmer_dict[peopleAstro]
+        astroInfo = astro_dict[peopleAstro]
         print 'astrology sign: ' + astroInfo[0]
     except:
         print "no info found"
-    
+
+def searchChar(peopleChar):
+    try:
+        charInfo = char_astro[peopleChar]
+        print 'you are most like: ' + charInfo[0]
+    except:
+        print "no info found"
 userWantsMore = True
 while userWantsMore == True:
     peopleAstro = raw_input('Please enter a sign: ').lower()
@@ -28,6 +49,7 @@ while userWantsMore == True:
     if searchAgain == 'y':
         userWantsMore = True
     elif searchAgain == 'n':
-        userWantsMore = False
+        peopleChar = raw_input('which characteristic do you think suits you most: daring, twofaced, charming,    loving, wise, enthusiastic, adventurous, sensitive, fierce, protective, emotional, or strong?').lower()
+        searchChar(peopleChar)
     else:
         print "uh"
